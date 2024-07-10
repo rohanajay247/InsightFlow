@@ -1,0 +1,85 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.login-page{
+  width: 100vw;
+  font-family: Audiowide;
+}
+
+
+.navBar{
+  width: 100%;
+  /* background-color: black; */
+  min-height: 5rem;
+  display: flex;
+  align-items: end;
+  padding-top: 2.5rem;
+  /* border: 1px solid black; */
+}
+nav{
+  width: 87%;
+  max-width: 1350px;
+  margin: 0 auto;
+  color: white;
+}
+.insightflow2 {
+  /* position: relative; */
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  color: black;
+
+}
+
+.mainSection{
+  width: 100%;
+  /* background-color: green; */
+  height: 46rem;
+}
+.where-insight-meets {
+  position: relative;
+  line-height: 3rem;
+
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-transform: capitalize;
+  flex-shrink: 0;
+  font-family: Outfit;
+
+}
+
+.frame-parent10 {
+  border-radius: 10px;
+  background-color: #9090dc;
+  backdrop-filter: blur(4px);
+  font-family: Montserrat;
+
+  
+
+}
+
+.inputName{
+  border: 0;
+  outline: 0;
+  background-color: #fff;
+  width: 20rem;
+  border-radius: 5px;
+  height: 3rem;
+  padding: 22px 78px 21px;
+  box-sizing: border-box;
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 20px;
+  color: #000;
+}
+
+.backbtn{
+  text-decoration: none;
+  color: black;
+}
+

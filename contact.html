@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="contact.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Audiowide:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="contact-form">
+      <h1>InsightFlow</h1>
+      <div class="container">
+        <div class="main">
+          <div class="content">
+            <h2>Contact Us</h2>
+            <form action="function.php" method="post" >
+              <input id="formname" type="text" name="name"placeholder="Enter Your Name" />
+              <input id="formmail" type="email" name="email" placeholder="Enter Your Email" />
+              <textarea id="formmsg" name="message" placeholder="Your Message"></textarea>
+              <button type="submit" class="btn" id="sendButton">Send</button>
+            </form>
+        
+          </div>
+          <div class="form-img">
+            <img src="contactimg.jpg" alt="" />
+          </div>
+        </div>
+       
+      </div>
+    </div>
+    <script>
+      var sendButton = document.getElementById("sendButton");
+      var nameRegex = /^[a-zA-Z\s]+$/;
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (sendButton) {
+        sendButton.addEventListener("click", function (e) {
+          alert(
+          "Your request has been submitted. Our team shall contact you soon"
+          );
+          var nameInput = document.getElementById("formname").value;
+          var emailInput = document.getElementById("formmail").value;
+          var msgInput = document.getElementById("formmsg").value;
+          if (
+            nameInput.trim() == "" ||
+            emailInput.trim() == "" ||
+            msgInput.trim() == ""
+          ) {
+            alert("please fill all fields");
+            return false;
+          }
+          if (!nameRegex.test(nameInput)) {
+            alert("enter correct name");
+            return false;
+          }
+          if (!emailRegex.test(emailInput)) {
+            alert("enter correct email");
+            return false;
+          } else {
+            alert("submit");
+          }
+        });
+      }
+    </script>
+    <?php
+        if(isset($_POST['ok'])){
+          include_once 'function.php';
+          $obj = new Contact();
+          $res = $obj->contact_us($_POST);
+          if($res==true){
+            echo "<script> alert('Query successful')</script>";
+          }
+          else{
+            echo "<script> alert('Query unsuccessful')</script>";
+          }
+
+        }
+
+        ?>
+  </body>
+</html>
